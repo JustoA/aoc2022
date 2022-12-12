@@ -6,7 +6,6 @@
 
 std::vector<std::string> barseInput(std::string filename){
     std::ifstream input(filename); // class constructor or smth idk c++ rlly well
-    // read them bad bois into a string
     std::vector<std::string> rawIn;
     std::string line;
 
@@ -20,9 +19,10 @@ std::vector<std::string> barseInput(std::string filename){
 // 1 beats 3
 // 2 beats 1
 // 3 beats 2
-// AX1
-// BY2
-// CZ3
+
+// if i subtract ze numbers of the matchups i get 1%3 if i win, and -1 if i lose (?)
+
+
 int part1(std::vector<std::string> input){
     std::map<char, int> game;
 
@@ -73,11 +73,11 @@ int part2(std::vector<std::string> input){
         int opponent = game[current_round[0]];
         int outcome = game[current_round[2]];
         
-        int me = (opponent + outcome) % 3;
+        int me = (opponent + outcome) % 3; // just did some algebra on my "1 if win, -1 if lose" nonsense
         if (me < 1) me+=3;
         
-        totalScore+=me;
-        totalScore+=outcomeToPoints[outcome]; // bonus for outcome
+        totalScore+=me; // bonus for the shape i played
+        totalScore+=outcomeToPoints[outcome]; // score for outcome
 
     }
     return totalScore;
@@ -90,6 +90,5 @@ int main(){
     //std::cout << -2%3 << std::endl;
     std::cout << "Part 1: " << part1(input) << std::endl;
     std::cout << "Part 2: " << part2(input) << std::endl;
-
     return 0;
 }
