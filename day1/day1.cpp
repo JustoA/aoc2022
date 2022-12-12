@@ -10,7 +10,7 @@ int maxCalories(std::vector<std::string> vec){
     for(int i=0; i < vec.size(); i++){
         // std::cout << vec[i] << std::endl;
         if(vec[i].compare("")){
-        cursum+= stoi(vec[i]);
+            cursum+= stoi(vec[i]);
         }
         else{
             max = cursum > max ? cursum : max; // I are cool and use ternary operashun 
@@ -26,8 +26,8 @@ int topThreeCalories(std::vector<std::string> vec){
     for(int i=0; i < vec.size(); i++){
         // std::cout << vec[i] << std::endl;
         if(vec[i].compare("")){
-        cursum+= stoi(vec[i]);
-        continue;
+            cursum+= stoi(vec[i]);
+            continue;
         }
         for (int j=0; j < 3; j++){
             if (topThree[j] < cursum){
@@ -48,8 +48,8 @@ int main(){
     std::string line;
 
     while (input){ 
-    std::getline(input, line);
-    rawIn.push_back(line);
+        std::getline(input, line);
+        rawIn.push_back(line);
     }
     rawIn.pop_back(); //lole
 
