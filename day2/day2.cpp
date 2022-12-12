@@ -10,8 +10,8 @@ std::vector<std::string> barseInput(std::string filename){
     std::string line;
 
     while (input){ 
-    std::getline(input, line);
-    rawIn.push_back(line);
+        std::getline(input, line);
+        rawIn.push_back(line);
     }
     rawIn.pop_back(); //lole
     return rawIn;
